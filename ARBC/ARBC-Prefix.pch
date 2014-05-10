@@ -14,4 +14,11 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import <CoreData+MagicalRecord.h>
 #endif
+
+#define NILIFNULL(foo) ((foo == [NSNull null]) ? nil : foo)
+#define NULLIFNIL(foo) ((foo == nil) ? [NSNull null] : foo)
+#define EMPTYIFNIL(foo) ((foo == nil) ? @"" : foo)
+#define EMPTYIFNULL(foo) ((foo == [NSNull null]) ? @"" : foo)
+#define ZEROIFNULL(foo) ((foo == [NSNull null]) ? [NSNumber numberWithInt:0] : foo)

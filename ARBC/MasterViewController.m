@@ -7,14 +7,14 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
 
-@interface MasterViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-@end
-
-@implementation MasterViewController
+@implementation MasterViewController {
+    NSArray* _books;
+    NSFetchedResultsController* _fetchedResultsController;
+    NSManagedObjectContext* _context;
+    AddNewBookViewController* _anb;
+}
 
 - (void)awakeFromNib
 {
@@ -27,81 +27,126 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openAddBookView:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    _context = [[StorageManager sharedManager] managedObjectContext];
+    
+    NSFetchRequest* fetchRequest = [Book MR_createFetchRequest];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:_context sectionNameKeyPath:nil cacheName:nil];
+    
+    _fetchedResultsController.delegate = self;
+    [_fetchedResultsController performFetch:nil];
+
+    [self fetchBooks];
+    
+    _anb = [[AddNewBookViewController alloc] initWithNibName:@"AddNewBookViewController" bundle:nil];
+    _anb.delegate = self;
+}
+
+- (IBAction)openAddBookView:(id)sender {
+    [self presentViewController:_anb animated:YES completion:nil];
+}
+
+#pragma mark addnewbook delegate
+
+-(void)didFinishAddingFields:(NSDictionary *)fields {
+    
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+
+    _anb = [[AddNewBookViewController alloc] initWithNibName:@"AddNewBookViewController" bundle:nil];
+    [[APIAgent sharedAgent] postToEndpoint:@"books"
+                                withParams:@{
+                                             @"author": [fields valueForKey:@"author"],
+                                             @"title": [fields valueForKey:@"title"],
+                                             @"keywords": [fields valueForKey:@"keywords"],
+                                             @"publisher": [fields valueForKey:@"publisher"]
+                                           }
+                                 withImage:[fields valueForKey:@"cover"]
+                                   andName:@"cover"
+                                 onSuccess:^(id responseObject) {
+                                     
+                                     
+                                     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                                     
+
+                                     NSLog(@"KOOLSÁG");
+                                     NSDictionary *bookResponse = (NSDictionary *)responseObject;
+                                     Book *book = [Book MR_createEntity];
+                                     book.title = [bookResponse valueForKey:@"title"];
+                                     book.cover = [bookResponse valueForKey:@"cover"];
+                                     book.author = [bookResponse valueForKey:@"author"];
+                                     book.publisher = [bookResponse valueForKey:@"publisher"];
+                                     [[[StorageManager sharedManager] managedObjectContext] MR_saveOnlySelfAndWait];
+
+                                     [self fetchBooks];
+                                     [self.tableView reloadData];
+                                     
+    }
+                                    onFail:^(NSError *error) {
+        NSLog(@"ERRORR");
+    }];
+}
+
+-(void)addNewBookViewControllerDidCancel {
+    NSLog(@"canceled..");
+}
+
+-(void)fetchBooks {
+    _books = [Book MR_findAllSortedBy:@"title" ascending:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender
-{
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
 }
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return [_books count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
     [self configureCell:cell atIndexPath:indexPath];
+    
     return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell
+          atIndexPath:(NSIndexPath *)indexPath {
+    Book *book = _books[indexPath.row];
+    cell.textLabel.text = book.title;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"whaaaat");
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }   
+        [_context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // The table view should not be re-orderable.
     return NO;
 }
 
@@ -109,49 +154,11 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        Book *book = _books[indexPath.row];
+        [[segue destinationViewController] setHideButton:YES];
+        [[segue destinationViewController] setCurrentBook:book];
     }
 }
-
-#pragma mark - Fetched results controller
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-	     // Replace this implementation with code to handle the error appropriately.
-	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    
-    return _fetchedResultsController;
-}    
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -184,6 +191,7 @@
             break;
             
         case NSFetchedResultsChangeDelete:
+        
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
@@ -200,23 +208,8 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
+    [self fetchBooks];
     [self.tableView endUpdates];
-}
-
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
- */
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
 }
 
 @end

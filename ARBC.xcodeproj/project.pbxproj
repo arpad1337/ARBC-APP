@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4535F676EA13433F8F15CFF4 /* libPods-ARBC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F275DD6ADF74635BB304241 /* libPods-ARBC.a */; };
 		BAD99CC0191BCB0200178D19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD99CBF191BCB0200178D19 /* Foundation.framework */; };
 		BAD99CC2191BCB0200178D19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD99CC1191BCB0200178D19 /* CoreGraphics.framework */; };
 		BAD99CC4191BCB0200178D19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD99CC3191BCB0200178D19 /* UIKit.framework */; };
@@ -25,6 +26,35 @@
 		BAD99CEA191BCB0300178D19 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD99CC5191BCB0200178D19 /* CoreData.framework */; };
 		BAD99CF2191BCB0300178D19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAD99CF0191BCB0300178D19 /* InfoPlist.strings */; };
 		BAD99CF4191BCB0300178D19 /* ARBCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99CF3191BCB0300178D19 /* ARBCTests.m */; };
+		BAD99D16191C0D1500178D19 /* flash-auto.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99CFF191C0D1400178D19 /* flash-auto.png */; };
+		BAD99D17191C0D1500178D19 /* flash-auto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D00191C0D1400178D19 /* flash-auto@2x.png */; };
+		BAD99D18191C0D1500178D19 /* flash-off.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D01191C0D1400178D19 /* flash-off.png */; };
+		BAD99D19191C0D1500178D19 /* flash-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D02191C0D1400178D19 /* flash-off@2x.png */; };
+		BAD99D1A191C0D1500178D19 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D03191C0D1400178D19 /* flash.png */; };
+		BAD99D1B191C0D1500178D19 /* flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D04191C0D1400178D19 /* flash@2x.png */; };
+		BAD99D1C191C0D1500178D19 /* focus-crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D05191C0D1400178D19 /* focus-crosshair.png */; };
+		BAD99D1D191C0D1500178D19 /* focus-crosshair@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D06191C0D1400178D19 /* focus-crosshair@2x.png */; };
+		BAD99D1E191C0D1500178D19 /* front-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D07191C0D1400178D19 /* front-camera.png */; };
+		BAD99D1F191C0D1500178D19 /* front-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D08191C0D1400178D19 /* front-camera@2x.png */; };
+		BAD99D20191C0D1500178D19 /* grid-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D09191C0D1400178D19 /* grid-icon.png */; };
+		BAD99D21191C0D1500178D19 /* grid-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D0A191C0D1400178D19 /* grid-icon@2x.png */; };
+		BAD99D22191C0D1500178D19 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D0B191C0D1400178D19 /* grid.png */; };
+		BAD99D23191C0D1500178D19 /* grid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D0C191C0D1400178D19 /* grid@2x.png */; };
+		BAD99D24191C0D1500178D19 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D0D191C0D1400178D19 /* library.png */; };
+		BAD99D25191C0D1500178D19 /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D0E191C0D1400178D19 /* library@2x.png */; };
+		BAD99D26191C0D1500178D19 /* micro_carbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D0F191C0D1400178D19 /* micro_carbon.png */; };
+		BAD99D27191C0D1500178D19 /* micro_carbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D10191C0D1400178D19 /* micro_carbon@2x.png */; };
+		BAD99D28191C0D1500178D19 /* take-snap.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D11191C0D1400178D19 /* take-snap.png */; };
+		BAD99D29191C0D1500178D19 /* take-snap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D12191C0D1400178D19 /* take-snap@2x.png */; };
+		BAD99D2A191C0D1500178D19 /* YCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99D14191C0D1400178D19 /* YCameraViewController.m */; };
+		BAD99D2B191C0D1500178D19 /* YCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D15191C0D1400178D19 /* YCameraViewController.xib */; };
+		BAD99D2D191C0EC700178D19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD99D2C191C0EC700178D19 /* AVFoundation.framework */; };
+		BAD99D30191C1D0F00178D19 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99D2F191C1D0F00178D19 /* SearchViewController.m */; };
+		BAD99D3D191CDB9D00178D19 /* APIAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99D3A191CDB9D00178D19 /* APIAgent.m */; };
+		BAD99D3E191CDB9D00178D19 /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99D3C191CDB9D00178D19 /* StorageManager.m */; };
+		BAD99D47191CED4D00178D19 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99D46191CED4D00178D19 /* Book.m */; };
+		BAD99D4E191CFDA400178D19 /* AddNewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD99D4C191CFDA300178D19 /* AddNewBookViewController.m */; };
+		BAD99D4F191CFDA400178D19 /* AddNewBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD99D4D191CFDA300178D19 /* AddNewBookViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F275DD6ADF74635BB304241 /* libPods-ARBC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARBC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8940C9AAE0E44C31B8EB3402 /* Pods-ARBC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARBC.xcconfig"; path = "Pods/Pods-ARBC.xcconfig"; sourceTree = "<group>"; };
 		BAD99CBC191BCB0200178D19 /* ARBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD99CBF191BCB0200178D19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAD99CC1191BCB0200178D19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +93,41 @@
 		BAD99CEF191BCB0300178D19 /* ARBCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ARBCTests-Info.plist"; sourceTree = "<group>"; };
 		BAD99CF1191BCB0300178D19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BAD99CF3191BCB0300178D19 /* ARBCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARBCTests.m; sourceTree = "<group>"; };
+		BAD99CFF191C0D1400178D19 /* flash-auto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-auto.png"; sourceTree = "<group>"; };
+		BAD99D00191C0D1400178D19 /* flash-auto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-auto@2x.png"; sourceTree = "<group>"; };
+		BAD99D01191C0D1400178D19 /* flash-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-off.png"; sourceTree = "<group>"; };
+		BAD99D02191C0D1400178D19 /* flash-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-off@2x.png"; sourceTree = "<group>"; };
+		BAD99D03191C0D1400178D19 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
+		BAD99D04191C0D1400178D19 /* flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash@2x.png"; sourceTree = "<group>"; };
+		BAD99D05191C0D1400178D19 /* focus-crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus-crosshair.png"; sourceTree = "<group>"; };
+		BAD99D06191C0D1400178D19 /* focus-crosshair@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus-crosshair@2x.png"; sourceTree = "<group>"; };
+		BAD99D07191C0D1400178D19 /* front-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-camera.png"; sourceTree = "<group>"; };
+		BAD99D08191C0D1400178D19 /* front-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-camera@2x.png"; sourceTree = "<group>"; };
+		BAD99D09191C0D1400178D19 /* grid-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-icon.png"; sourceTree = "<group>"; };
+		BAD99D0A191C0D1400178D19 /* grid-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-icon@2x.png"; sourceTree = "<group>"; };
+		BAD99D0B191C0D1400178D19 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
+		BAD99D0C191C0D1400178D19 /* grid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid@2x.png"; sourceTree = "<group>"; };
+		BAD99D0D191C0D1400178D19 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
+		BAD99D0E191C0D1400178D19 /* library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library@2x.png"; sourceTree = "<group>"; };
+		BAD99D0F191C0D1400178D19 /* micro_carbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro_carbon.png; sourceTree = "<group>"; };
+		BAD99D10191C0D1400178D19 /* micro_carbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "micro_carbon@2x.png"; sourceTree = "<group>"; };
+		BAD99D11191C0D1400178D19 /* take-snap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take-snap.png"; sourceTree = "<group>"; };
+		BAD99D12191C0D1400178D19 /* take-snap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take-snap@2x.png"; sourceTree = "<group>"; };
+		BAD99D13191C0D1400178D19 /* YCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCameraViewController.h; sourceTree = "<group>"; };
+		BAD99D14191C0D1400178D19 /* YCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCameraViewController.m; sourceTree = "<group>"; };
+		BAD99D15191C0D1400178D19 /* YCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YCameraViewController.xib; sourceTree = "<group>"; };
+		BAD99D2C191C0EC700178D19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BAD99D2E191C1D0F00178D19 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		BAD99D2F191C1D0F00178D19 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		BAD99D39191CDB9D00178D19 /* APIAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIAgent.h; sourceTree = "<group>"; };
+		BAD99D3A191CDB9D00178D19 /* APIAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIAgent.m; sourceTree = "<group>"; };
+		BAD99D3B191CDB9D00178D19 /* StorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManager.h; sourceTree = "<group>"; };
+		BAD99D3C191CDB9D00178D19 /* StorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageManager.m; sourceTree = "<group>"; };
+		BAD99D45191CED4D00178D19 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		BAD99D46191CED4D00178D19 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		BAD99D4B191CFDA300178D19 /* AddNewBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewBookViewController.h; sourceTree = "<group>"; };
+		BAD99D4C191CFDA300178D19 /* AddNewBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewBookViewController.m; sourceTree = "<group>"; };
+		BAD99D4D191CFDA300178D19 /* AddNewBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewBookViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +135,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD99D2D191C0EC700178D19 /* AVFoundation.framework in Frameworks */,
 				BAD99CC2191BCB0200178D19 /* CoreGraphics.framework in Frameworks */,
 				BAD99CC6191BCB0200178D19 /* CoreData.framework in Frameworks */,
 				BAD99CC4191BCB0200178D19 /* UIKit.framework in Frameworks */,
 				BAD99CC0191BCB0200178D19 /* Foundation.framework in Frameworks */,
+				4535F676EA13433F8F15CFF4 /* libPods-ARBC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +165,7 @@
 				BAD99CED191BCB0300178D19 /* ARBCTests */,
 				BAD99CBE191BCB0200178D19 /* Frameworks */,
 				BAD99CBD191BCB0200178D19 /* Products */,
+				8940C9AAE0E44C31B8EB3402 /* Pods-ARBC.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,11 +181,13 @@
 		BAD99CBE191BCB0200178D19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD99D2C191C0EC700178D19 /* AVFoundation.framework */,
 				BAD99CBF191BCB0200178D19 /* Foundation.framework */,
 				BAD99CC1191BCB0200178D19 /* CoreGraphics.framework */,
 				BAD99CC3191BCB0200178D19 /* UIKit.framework */,
 				BAD99CC5191BCB0200178D19 /* CoreData.framework */,
 				BAD99CE6191BCB0300178D19 /* XCTest.framework */,
+				7F275DD6ADF74635BB304241 /* libPods-ARBC.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,16 +195,15 @@
 		BAD99CC7191BCB0200178D19 /* ARBC */ = {
 			isa = PBXGroup;
 			children = (
+				BAD99CFD191C0D1400178D19 /* YCameraViewController */,
 				BAD99CD0191BCB0200178D19 /* AppDelegate.h */,
 				BAD99CD1191BCB0200178D19 /* AppDelegate.m */,
+				BAD99D32191CD82D00178D19 /* Data */,
 				BAD99CD3191BCB0200178D19 /* Main.storyboard */,
-				BAD99CD9191BCB0200178D19 /* MasterViewController.h */,
-				BAD99CDA191BCB0200178D19 /* MasterViewController.m */,
-				BAD99CDC191BCB0200178D19 /* DetailViewController.h */,
-				BAD99CDD191BCB0200178D19 /* DetailViewController.m */,
+				BAD99D31191CD80400178D19 /* Favourites */,
 				BAD99CDF191BCB0200178D19 /* Images.xcassets */,
-				BAD99CD6191BCB0200178D19 /* ARBC.xcdatamodeld */,
 				BAD99CC8191BCB0200178D19 /* Supporting Files */,
+				BAD99D50191CFDE700178D19 /* Scan */,
 			);
 			path = ARBC;
 			sourceTree = "<group>";
@@ -166,6 +237,81 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BAD99CFD191C0D1400178D19 /* YCameraViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BAD99CFE191C0D1400178D19 /* UI */,
+				BAD99D13191C0D1400178D19 /* YCameraViewController.h */,
+				BAD99D14191C0D1400178D19 /* YCameraViewController.m */,
+				BAD99D15191C0D1400178D19 /* YCameraViewController.xib */,
+			);
+			path = YCameraViewController;
+			sourceTree = "<group>";
+		};
+		BAD99CFE191C0D1400178D19 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BAD99CFF191C0D1400178D19 /* flash-auto.png */,
+				BAD99D00191C0D1400178D19 /* flash-auto@2x.png */,
+				BAD99D01191C0D1400178D19 /* flash-off.png */,
+				BAD99D02191C0D1400178D19 /* flash-off@2x.png */,
+				BAD99D03191C0D1400178D19 /* flash.png */,
+				BAD99D04191C0D1400178D19 /* flash@2x.png */,
+				BAD99D05191C0D1400178D19 /* focus-crosshair.png */,
+				BAD99D06191C0D1400178D19 /* focus-crosshair@2x.png */,
+				BAD99D07191C0D1400178D19 /* front-camera.png */,
+				BAD99D08191C0D1400178D19 /* front-camera@2x.png */,
+				BAD99D09191C0D1400178D19 /* grid-icon.png */,
+				BAD99D0A191C0D1400178D19 /* grid-icon@2x.png */,
+				BAD99D0B191C0D1400178D19 /* grid.png */,
+				BAD99D0C191C0D1400178D19 /* grid@2x.png */,
+				BAD99D0D191C0D1400178D19 /* library.png */,
+				BAD99D0E191C0D1400178D19 /* library@2x.png */,
+				BAD99D0F191C0D1400178D19 /* micro_carbon.png */,
+				BAD99D10191C0D1400178D19 /* micro_carbon@2x.png */,
+				BAD99D11191C0D1400178D19 /* take-snap.png */,
+				BAD99D12191C0D1400178D19 /* take-snap@2x.png */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BAD99D31191CD80400178D19 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				BAD99CD9191BCB0200178D19 /* MasterViewController.h */,
+				BAD99CDA191BCB0200178D19 /* MasterViewController.m */,
+				BAD99CDC191BCB0200178D19 /* DetailViewController.h */,
+				BAD99CDD191BCB0200178D19 /* DetailViewController.m */,
+				BAD99D4B191CFDA300178D19 /* AddNewBookViewController.h */,
+				BAD99D4C191CFDA300178D19 /* AddNewBookViewController.m */,
+				BAD99D4D191CFDA300178D19 /* AddNewBookViewController.xib */,
+			);
+			name = Favourites;
+			sourceTree = "<group>";
+		};
+		BAD99D32191CD82D00178D19 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BAD99CD6191BCB0200178D19 /* ARBC.xcdatamodeld */,
+				BAD99D45191CED4D00178D19 /* Book.h */,
+				BAD99D46191CED4D00178D19 /* Book.m */,
+				BAD99D39191CDB9D00178D19 /* APIAgent.h */,
+				BAD99D3A191CDB9D00178D19 /* APIAgent.m */,
+				BAD99D3B191CDB9D00178D19 /* StorageManager.h */,
+				BAD99D3C191CDB9D00178D19 /* StorageManager.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		BAD99D50191CFDE700178D19 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				BAD99D2E191C1D0F00178D19 /* SearchViewController.h */,
+				BAD99D2F191C1D0F00178D19 /* SearchViewController.m */,
+			);
+			name = Scan;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +319,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAD99CF7191BCB0300178D19 /* Build configuration list for PBXNativeTarget "ARBC" */;
 			buildPhases = (
+				20CF361ABE8B419CA98B7831 /* Check Pods Manifest.lock */,
 				BAD99CB8191BCB0200178D19 /* Sources */,
 				BAD99CB9191BCB0200178D19 /* Frameworks */,
 				BAD99CBA191BCB0200178D19 /* Resources */,
+				A410872E5DEC458D95E0591E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +361,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "OE-NIK";
 				TargetAttributes = {
+					BAD99CBB191BCB0200178D19 = {
+						DevelopmentTeam = 5D94AFJG92;
+					};
 					BAD99CE4191BCB0300178D19 = {
 						TestTargetID = BAD99CBB191BCB0200178D19;
 					};
@@ -242,8 +393,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD99D29191C0D1500178D19 /* take-snap@2x.png in Resources */,
+				BAD99D1D191C0D1500178D19 /* focus-crosshair@2x.png in Resources */,
+				BAD99D24191C0D1500178D19 /* library.png in Resources */,
+				BAD99D22191C0D1500178D19 /* grid.png in Resources */,
+				BAD99D4F191CFDA400178D19 /* AddNewBookViewController.xib in Resources */,
 				BAD99CE0191BCB0200178D19 /* Images.xcassets in Resources */,
+				BAD99D16191C0D1500178D19 /* flash-auto.png in Resources */,
+				BAD99D1F191C0D1500178D19 /* front-camera@2x.png in Resources */,
+				BAD99D25191C0D1500178D19 /* library@2x.png in Resources */,
+				BAD99D20191C0D1500178D19 /* grid-icon.png in Resources */,
+				BAD99D1A191C0D1500178D19 /* flash.png in Resources */,
+				BAD99D26191C0D1500178D19 /* micro_carbon.png in Resources */,
+				BAD99D27191C0D1500178D19 /* micro_carbon@2x.png in Resources */,
+				BAD99D21191C0D1500178D19 /* grid-icon@2x.png in Resources */,
+				BAD99D19191C0D1500178D19 /* flash-off@2x.png in Resources */,
+				BAD99D18191C0D1500178D19 /* flash-off.png in Resources */,
+				BAD99D28191C0D1500178D19 /* take-snap.png in Resources */,
+				BAD99D17191C0D1500178D19 /* flash-auto@2x.png in Resources */,
 				BAD99CCC191BCB0200178D19 /* InfoPlist.strings in Resources */,
+				BAD99D1C191C0D1500178D19 /* focus-crosshair.png in Resources */,
+				BAD99D2B191C0D1500178D19 /* YCameraViewController.xib in Resources */,
+				BAD99D1B191C0D1500178D19 /* flash@2x.png in Resources */,
+				BAD99D1E191C0D1500178D19 /* front-camera.png in Resources */,
+				BAD99D23191C0D1500178D19 /* grid@2x.png in Resources */,
 				BAD99CD5191BCB0200178D19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,16 +431,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20CF361ABE8B419CA98B7831 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A410872E5DEC458D95E0591E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-ARBC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAD99CB8191BCB0200178D19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD99D47191CED4D00178D19 /* Book.m in Sources */,
 				BAD99CDE191BCB0200178D19 /* DetailViewController.m in Sources */,
+				BAD99D2A191C0D1500178D19 /* YCameraViewController.m in Sources */,
 				BAD99CDB191BCB0200178D19 /* MasterViewController.m in Sources */,
 				BAD99CD8191BCB0200178D19 /* ARBC.xcdatamodeld in Sources */,
 				BAD99CD2191BCB0200178D19 /* AppDelegate.m in Sources */,
 				BAD99CCE191BCB0200178D19 /* main.m in Sources */,
+				BAD99D3E191CDB9D00178D19 /* StorageManager.m in Sources */,
+				BAD99D3D191CDB9D00178D19 /* APIAgent.m in Sources */,
+				BAD99D30191C1D0F00178D19 /* SearchViewController.m in Sources */,
+				BAD99D4E191CFDA400178D19 /* AddNewBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,9 +601,11 @@
 		};
 		BAD99CF8191BCB0300178D19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8940C9AAE0E44C31B8EB3402 /* Pods-ARBC.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARBC/ARBC-Prefix.pch";
 				INFOPLIST_FILE = "ARBC/ARBC-Info.plist";
@@ -402,9 +616,11 @@
 		};
 		BAD99CF9191BCB0300178D19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8940C9AAE0E44C31B8EB3402 /* Pods-ARBC.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARBC/ARBC-Prefix.pch";
 				INFOPLIST_FILE = "ARBC/ARBC-Info.plist";
@@ -472,6 +688,7 @@
 				BAD99CF9191BCB0300178D19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAD99CFA191BCB0300178D19 /* Build configuration list for PBXNativeTarget "ARBCTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +697,7 @@
 				BAD99CFC191BCB0300178D19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -9,29 +9,35 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-- (void)configureView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *publisherLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addToFavouritesButton;
+
+
 @end
 
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)configureView
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
+    if(self.currentBook) {
+        self.titleLabel.text = self.currentBook.title;
+        self.authorLabel.text = self.currentBook.author;
+        self.publisherLabel.text = self.currentBook.publisher;
+        [self.coverImageView setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@/%@", [APIAgent sharedAgent].apiURL, self.currentBook.cover]]];
     }
 }
 
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+-(NSManagedObjectContext *)currentContext {
+    if(_currentContext) {
+        return _currentContext;
+    } else {
+        return [[StorageManager sharedManager] managedObjectContext];
     }
 }
 
@@ -40,12 +46,25 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    if(self.hideButton) {
+        self.addToFavouritesButton.alpha = 0;
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)onAddToFavourites:(id)sender {
+    if(_currentContext != [[StorageManager sharedManager] managedObjectContext]) {
+        [_currentContext save:nil];
+    }
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
 }
 
 @end

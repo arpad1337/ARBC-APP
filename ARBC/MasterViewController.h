@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Book.h"
+#import "StorageManager.h"
+#import "AddNewBookViewController.h"
+#import "APIAgent.h"
 
-#import <CoreData/CoreData.h>
-
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
-
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, AddNewBookViewControllerDelegate>
 
 @end

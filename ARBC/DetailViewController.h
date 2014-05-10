@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Book.h"
+#import "UIImageView+AFNetworking.h"
+#import "APIAgent.h"
+#import "StorageManager.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Book *currentBook;
+@property (nonatomic) BOOL hideButton;
+@property (nonatomic, strong) NSManagedObjectContext *currentContext;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
