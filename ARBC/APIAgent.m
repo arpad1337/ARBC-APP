@@ -66,9 +66,9 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         id json = [responseObject objectForKey:@"data"];
         
-        if(!json) {
+               if([json isEqual: nil]) {
             NSLog(@"%@",operation.description);
-            failBlock(responseObject);
+            failBlock(nil);
         }
         
         successBlock(json);
@@ -92,9 +92,9 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         id json = [responseObject objectForKey:@"data"];
         
-        if(!json) {
+        if([json isEqual:nil]) {
             NSLog(@"%@",operation.description);
-            failBlock(responseObject);
+            failBlock(nil);
         }
         
         successBlock(json);

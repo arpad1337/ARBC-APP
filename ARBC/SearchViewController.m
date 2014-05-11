@@ -68,12 +68,16 @@
         
         if([responseObject isEqual:[NSNull null]])
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hiba"
-                                                            message:@"Valami hiba lépett fel az azonosítás során, kérjük próbálja újra!"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nincs találat"
+                                                            message:@"Kérjük próbálja újra."
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
+            
+            _searchButton.alpha = 1.0;
+            _helperLabel.text = _hint;
+
         } else {
         
             _searchButton.alpha = 1.0;
